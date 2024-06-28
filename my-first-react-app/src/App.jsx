@@ -12,6 +12,11 @@ const initialProfile = {
 
 function App() {
   const [profile, setProfile] = useState(initialProfile)
+  const [counter, setCounter] = useState(0);
+
+  setInterval(() => {
+    setCounter(count => count + 1)
+  }, 1000);
 
   function handleChange(e) {
     setProfile({
@@ -33,6 +38,10 @@ function App() {
 
       <h2>Phone Number</h2>
       <p>{profile.phoneNumber}</p>
+
+      <p>{counter} seconds have passed.</p>
+
+
     </>
   )
 }
